@@ -1,0 +1,168 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-text;
+  background-color: $color-bg;
+  line-height: 1.5;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: $color-primary-dark;
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// BEM Blocks
+.page-container {
+  padding: $space-md;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: $bp-tablet) {
+    padding: $space-lg;
+  }
+}
+
+.search-form {
+  background: $color-white;
+  padding: $space-md;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: $space-lg;
+
+  &__field {
+    margin-bottom: $space-md;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-weight: 600;
+    margin-bottom: $space-xs;
+  }
+
+  &__input {
+    padding: $space-sm;
+    border: 1px solid $color-gray;
+    border-radius: 4px;
+    font-size: $font-size-base;
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__button {
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    padding: $space-sm $space-md;
+    border-radius: 4px;
+    font-size: $font-size-base;
+    cursor: pointer;
+    width: 100%;
+    &:hover, &:focus {
+      background-color: $color-primary-dark;
+    }
+  }
+}
+
+.provider-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    background: $color-white;
+    padding: $space-md;
+    margin-bottom: $space-md;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  &__name {
+    margin: 0 0 $space-xs 0;
+    font-size: $font-size-lg;
+  }
+
+  &__taxonomy {
+    color: $color-gray;
+    margin-bottom: $space-sm;
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 600;
+  }
+}
+
+.provider-detail {
+  background: $color-white;
+  padding: $space-md;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+  &__header {
+    margin-bottom: $space-md;
+    border-bottom: 1px solid $color-gray-light;
+    padding-bottom: $space-md;
+  }
+
+  &__name {
+    margin: 0 0 $space-xs 0;
+    font-size: $font-size-xl;
+  }
+
+  &__npi {
+    color: $color-gray;
+    font-size: $font-size-sm;
+  }
+
+  &__section {
+    margin-bottom: $space-md;
+  }
+
+  &__section-title {
+    font-size: $font-size-lg;
+    margin-bottom: $space-sm;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: $space-xl;
+  color: $color-gray;
+}
+
+.error-message {
+  color: $color-error;
+  background-color: #fdeaea;
+  padding: $space-md;
+  border-radius: 4px;
+  margin-bottom: $space-md;
+}
